@@ -693,8 +693,13 @@ if [ ! -f blobs/"$deviceid"-"$version".der ]; then
         fs=disk0s1s$disk
     fi
 
-    # mount filesystems, no user data partition
-    remote_cmd "/usr/bin/mount_filesystems_nouser"
+    if [[ "$version" == *"16"* ]]; then
+        # mount filesystems, no user data partition
+        remote_cmd "/usr/bin/mount_filesystems_nouser"
+    else
+        # mount filesystems
+        remote_cmd "/usr/bin/mount_filesystems"
+    fi
 
     has_active=$(remote_cmd "ls /mnt6/active" 2> /dev/null)
     if [ ! "$has_active" = "/mnt6/active" ]; then
