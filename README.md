@@ -1,4 +1,4 @@
-# Palera1n mod by kitty915
+# Palera1n mod by kitty915 and y08wilm
 
 > **Warning** PLEASE, DO NOT ASK FOR SUPPORT REGARDING ICLOUD BYPASS IN PALERA1N DISCORD SERVER! THIS IS NOT OFFICIALLY SUPPORTED AND WON'T EVER BE.
 
@@ -23,7 +23,7 @@ You should be in the Hello screen for the version you restored, now reboot into 
 
 Now in your PC, clone this git repo (recursively) and cd into it
 ```
-git clone https://github.com/kitty915/palera1n-mod/ && cd ./palera1n-mod/
+git clone --recursive https://github.com/palera1n-legacy/palera1n-legacy/ && cd ./palera1n-legacy/
 ```
 
 Make sure you have all palera1n dependencies installed, then we can start with the jailbreak and bypass process.
@@ -34,11 +34,11 @@ Make sure you have all palera1n dependencies installed, then we can start with t
 
 We will jailbreak with palera1n first to prepare all files:
 ```
-./palera1n.sh --tweaks <iOS version> --verbose
+sudo ./palera1n.sh --tweaks <iOS version> --verbose
 ```
 >You will need to replace "\<iOS version\>" with the iOS version currently installed in your device. For example:
 >
->``./palera1n.sh --tweaks 15.7.1 --verbose``
+>``sudo ./palera1n.sh --tweaks 15.7.1 --verbose``
 
 Let the script run and follow any screen prompt if any. When it finishes you should be booted into iOS again. If for some reason you end up in recovery mode, try running the command again and it should boot you into iOS.
 
@@ -46,7 +46,7 @@ If everything was succesful and you booted into iOS, reboot to DFU again, we are
 
 Type the following command in the terminal:
 ```
-./palera1n.sh --bypass <iOS version>
+sudo ./palera1n.sh --bypass <iOS version>
 ```
 > Again, changing "\<iOS version\>" with your iOS version.
 
@@ -55,7 +55,7 @@ Let the process finish and your device should be in recovery mode
 Once in recovery mode, we are already done with the bypass, just run the same palera1n command from before to boot.
 
 ```
-./palera1n.sh --tweaks <iOS version> --verbose
+sudo ./palera1n.sh --tweaks <iOS version> --verbose
 ```
 > **Warning** You will have to run this command every time you want to boot your device!
 >
@@ -67,15 +67,15 @@ You can now jailbreak with palera1n too with the Tips app, enjoy!
 
 > In case that the JB breaks and you need to restore it, do the following:
 > 
-> ``./palera1n.sh --restorerootfs <iOS version>``
+> ``sudo ./palera1n.sh --restorerootfs <iOS version>``
 >
-> ``./palera1n.sh clean``
+> ``sudo ./palera1n.sh clean``
 >
-> ``./palera1n.sh --tweaks <iOS version> --verbose``
+> ``sudo ./palera1n.sh --tweaks <iOS version> --verbose``
 >
-> ``./palera1n.sh --bypass <iOS version>``
+> ``sudo ./palera1n.sh --bypass <iOS version>``
 >
-> ``./palera1n.sh --tweaks <iOS version> --verbose``
+> ``sudo ./palera1n.sh --tweaks <iOS version> --verbose``
 >
 > And you should be booted back in with a clean JB
 
